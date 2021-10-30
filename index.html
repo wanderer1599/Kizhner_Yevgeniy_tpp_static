@@ -1,27 +1,59 @@
-<<h1>My name is Yevgeniy Kizhner and my favorite hobby is developing video games.</h1>
-The current time is=:
-  <body onload="timeCount();">
-
-	<div id="clock"></div>
-
-	<script type="text/javascript">
-		
-function timeCount() {
-			var today = new Date();
-			var hour = ((today.getHours() + 11) % 12 + 1);
-			if(hour<10)hour = "0"+hour;
-
-			var minute = today.getMinutes();
-			if(minute<10)minute = "0"+minute;
-
-			var second = today.getSeconds();
-			if(second<10)second = "0"+second;
-
-			document.getElementById("clock").innerHTML = 
-			"hour+":"+minute+":"+second;
-
-			setTimeout("timeCount()", 1000);
-		}
-		
-</script>
+<!DOCTYPE HTML>
+<html>
+<h1>My name is Yevgeniy Kizhner and my favorite hobby is developing video games.</h1>
+The current time is:
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=
+        "width=device-width, 
+        initial-scale=1.0" />
+  
+    <title>Digital Clock</title>
+  
+    <style>
+        #clock {
+            font-size: 30px;
+            width: 100px;
+            margin: 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+  
+<body>
+    <div id="clock">8:10:45</div>
+  
+    <script>
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            am_pm = "AM";
+  
+            if (hour > 12) {
+                hour -= 12;
+                am_pm = "PM";
+            }
+            if (hour == 0) {
+                hr = 12;
+                am_pm = "AM";
+            }
+  
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+  
+            let currentTime = hour + ":" 
+                + min + ":" + sec;
+  
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+  
+        showTime();
+    </script>
 </body>
+  
+</html>
