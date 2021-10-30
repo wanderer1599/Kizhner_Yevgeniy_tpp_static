@@ -1,6 +1,12 @@
 <<h1>My name is Yevgeniy Kizhner and my favorite hobby is developing video games.</h1>
 The current time is: <script>
-var today = new Date();
+  function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct()',refresh)
+}
+  function display_ct(){
+  var today = new Date();
 var time = ((today.getHours() + 11) % 12 + 1) + ":" + today.getMinutes() + ":" + today.getSeconds();
 document.write(time);
+  }
 </script>
