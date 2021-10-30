@@ -1,12 +1,14 @@
 <<h1>My name is Yevgeniy Kizhner and my favorite hobby is developing video games.</h1>
-The current time is: <script>
-  function display_c(){
-var refresh=1000; // Refresh rate in milli seconds
-mytime=setTimeout('display_ct()',refresh)
-}
-  function display_ct(){
-  var today = new Date();
-var time = ((today.getHours() + 11) % 12 + 1) + ":" + today.getMinutes() + ":" + today.getSeconds();
-document.write(time);
-  }
+The current time is:
+<script>
+  <body onload="timeCount();">
+
+	<div id="clock"></div>
+
+	<script type="text/javascript">
+
+
+//var today = new Date();
+//var time = ((today.getHours() + 11) % 12 + 1) + ":" + today.getMinutes() + ":" + today.getSeconds();
+//document.write(time);
 </script>
